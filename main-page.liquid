@@ -1,0 +1,141 @@
+{% schema %}
+{
+  "name": "RADHIVAM Homepage",
+  "settings": []
+}
+{% endschema %}
+
+<div class="topbar">✨ THE ART OF GIFTING &nbsp; • &nbsp; GIFT-READY MOMENTS ACROSS INDIA &nbsp; • &nbsp; COD AVAILABLE</div>
+
+<header class="nav">
+  <div class="navin">
+    <button class="icon menu" onclick="document.querySelector('.links').classList.toggle('mobile')">☰</button>
+    <a href="#home"><img class="logo" src="{{ "radhivam-logo.png" | asset_url }}" alt="RADHIVAM India logo"></a>
+    <nav class="links">
+      <a href="#shop">Shop</a><a href="#finder">Gift Finder</a><a href="#occasions">Occasions</a><a href="#personalized">Personalized</a><a href="#story">Our Story</a>
+    </nav>
+    <div class="actions"><button class="icon" onclick="showToast('Search is ready to connect to Shopify search')">⌕</button><button class="icon" onclick="showToast('Wishlist updated')">♡</button><button class="icon" onclick="showToast('Cart is ready to connect to Shopify cart')">🛍</button></div>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="hero-content">
+    <div class="kicker">RADHIVAM • THE ART OF GIFTING</div>
+    <h1>Gifts That Say<br><i>What Words Can't.</i></h1>
+    <p>Thoughtfully chosen pieces for the people who make your world special — from little surprises to unforgettable moments.</p>
+    <a class="cta" href="#shop">Explore Gifts <span>→</span></a>
+  </div>
+</section>
+
+<section class="section reveal" id="shop">
+  <div class="head"><div class="eyebrow">Find their kind of gift</div><h2>Who are you gifting?</h2><p class="sub">Start with the person. We'll make the rest of your gifting journey beautifully simple.</p></div>
+  <div class="recipient-grid">
+    <div class="recipient" onclick="filterProducts('Women')"><div class="label"><h3>For Her</h3><small>Girls • Women • Mom • Sister • Friend</small><div class="arrow">SHOP FOR HER →</div></div></div>
+    <div class="recipient" onclick="filterProducts('Men')"><div class="label"><h3>For Him</h3><small>Men • Boys • Dad • Brother • Friend</small><div class="arrow">SHOP FOR HIM →</div></div></div>
+    <div class="recipient" onclick="filterProducts('Couples')"><div class="label"><h3>For Couples</h3><small>Love • Anniversary • Together</small><div class="arrow">SHOP FOR TWO →</div></div></div>
+    <div class="recipient" onclick="filterProducts('Kids')"><div class="label"><h3>For Kids</h3><small>Toys • DIY • Learning • Fun</small><div class="arrow">SHOP FOR KIDS →</div></div></div>
+  </div>
+</section>
+
+<section class="section reveal" id="occasions">
+  <div class="head"><div class="eyebrow">A reason to celebrate</div><h2>Shop by Occasion</h2></div>
+  <div class="occasions">
+    <button class="pill active" onclick="setOccasion(this,'All')">All Gifts</button><button class="pill" onclick="setOccasion(this,'Birthday')">🎂 Birthday</button><button class="pill" onclick="setOccasion(this,'Anniversary')">💍 Anniversary</button><button class="pill" onclick="setOccasion(this,'Romance')">❤️ Love & Romance</button><button class="pill" onclick="setOccasion(this,'Wedding')">💐 Wedding</button><button class="pill" onclick="setOccasion(this,'Just Because')">✨ Just Because</button><button class="pill" onclick="setOccasion(this,'Festival')">🪔 Festivals</button>
+  </div>
+</section>
+
+<section class="section reveal" id="finder">
+  <div class="finder">
+    <div><div class="eyebrow">Your personal gift concierge</div><h2>Not sure what to gift?</h2><p>Tell us who it's for, the moment you're celebrating and your budget. Your perfect gift is only a few clicks away.</p><button class="cta light" onclick="runFinder()">Find My Gift →</button></div>
+    <div class="steps">
+      <div class="step"><b>01 — Who is it for?</b><div class="choices" data-group="person"><button class="choice selected">Her</button><button class="choice">Him</button><button class="choice">Couple</button><button class="choice">Kid</button></div></div>
+      <div class="step"><b>02 — What's the occasion?</b><div class="choices" data-group="occasion"><button class="choice selected">Birthday</button><button class="choice">Anniversary</button><button class="choice">Romance</button><button class="choice">Just Because</button></div></div>
+      <div class="step"><b>03 — Your budget</b><div class="choices" data-group="budget"><button class="choice selected">₹299–₹999</button><button class="choice">₹999–₹1,999</button><button class="choice">₹2,000+</button></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" id="products">
+  <div class="head"><div class="eyebrow">Curated with feeling</div><h2>Gifts They'll Remember</h2><p class="sub">A starter collection for the RADHIVAM experience. Replace these with your real Shopify products.</p></div>
+  <div class="products" id="productGrid"></div>
+</section>
+
+<section class="section reveal" id="personalized">
+  <div class="banner"><div class="eyebrow">Make it uniquely theirs</div><h2>Personalized gifts, made from your story.</h2><p>Add a name, date, photo, initials or a heartfelt message and turn a beautiful gift into something no one else could have.</p><button class="cta" onclick="showToast('Personalized collection ready to connect')">Create a Personal Gift →</button></div>
+</section>
+
+<section class="section reveal">
+  <div class="head"><div class="eyebrow">The RADHIVAM promise</div><h2>Beautifully gifted. Thoughtfully delivered.</h2></div>
+  <div class="features">
+    <div class="feature"><div class="emoji">🎁</div><h3>Gift-Ready</h3><p>Elegant presentation designed for the moment you hand it over.</p></div>
+    <div class="feature"><div class="emoji">💌</div><h3>Personal Notes</h3><p>Add your own words to make every surprise more meaningful.</p></div>
+    <div class="feature"><div class="emoji">🚚</div><h3>Pan-India Delivery</h3><p>Convenient delivery across India with COD available.</p></div>
+    <div class="feature"><div class="emoji">🔒</div><h3>Secure Checkout</h3><p>Pay with UPI, cards or Cash on Delivery through Shopify.</p></div>
+  </div>
+</section>
+
+<section class="section reveal" id="story">
+  <div class="review"><div class="stars">★★★★★</div><div class="quote">“Some feelings are too beautiful for words. So we turned them into gifts.”</div><small>— The RADHIVAM philosophy</small></div>
+</section>
+
+<section class="section reveal">
+  <div class="newsletter">
+    <div><div class="eyebrow">A little surprise in your inbox</div><h2>Join the RADHIVAM circle.</h2><p class="sub" style="margin:0">Get new gift drops, occasion reminders and exclusive offers.</p></div>
+    <div class="inputrow"><input id="email" type="email" placeholder="Your email address"><button class="cta" onclick="subscribe()">Join Us →</button></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot">
+    <div><div class="brandfoot">RADHIVAM</div><p>THE ART OF GIFTING</p><p>Thoughtful gifts for every beautiful relationship and every reason to celebrate.</p></div>
+    <div><h4>Shop</h4><a href="#shop">For Her</a><a href="#shop">For Him</a><a href="#shop">For Couples</a><a href="#shop">For Kids</a><a href="#products">Best Sellers</a></div>
+    <div><h4>Help</h4><a href="#">Track Order</a><a href="#">Shipping Policy</a><a href="#">Returns & Refunds</a><a href="#">FAQs</a><a href="#">Contact Us</a></div>
+    <div><h4>Connect</h4><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">YouTube</a><p>WhatsApp: Add your number</p><p>Email: Add your email</p></div>
+  </div>
+  <div class="copy">© 2026 RADHIVAM INDIA. All rights reserved. • Gift-ready moments across India.</div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<div class="modal" id="modal"><div class="modalbox"><button class="close" onclick="closeModal()">×</button><div class="eyebrow">Your RADHIVAM gift match</div><h2 id="modalTitle">A thoughtful pick awaits.</h2><p id="modalText" class="sub" style="margin:0 0 22px"></p><button class="cta" onclick="closeModal();document.querySelector('#products').scrollIntoView({behavior:'smooth'})">Explore Gifts →</button></div></div>
+
+<script>
+const products=[
+ {name:"Pearl Grace Bracelet",cat:"Women",occasion:"Birthday",price:799,old:1099,icon:"✧"},
+ {name:"Love Note Gift Box",cat:"Couples",occasion:"Romance",price:1299,old:1699,icon:"♡"},
+ {name:"Classic Men's Wallet",cat:"Men",occasion:"Birthday",price:999,old:1399,icon:"▱"},
+ {name:"DIY Bloom Kit",cat:"Kids",occasion:"Just Because",price:599,old:799,icon:"✿"},
+ {name:"Celestial Ring",cat:"Women",occasion:"Anniversary",price:899,old:1199,icon:"◈"},
+ {name:"Urban Charm Bracelet",cat:"Men",occasion:"Just Because",price:699,old:899,icon:"◌"},
+ {name:"Soft Love Bear",cat:"Kids",occasion:"Birthday",price:749,old:999,icon:"♡"},
+ {name:"Festive Mini Hamper",cat:"Couples",occasion:"Festival",price:1499,old:1999,icon:"✦"}
+];
+let activeOccasion="All";
+function renderProducts(){
+ const grid=document.getElementById('productGrid');
+ const shown=products.filter(p=>activeOccasion==="All"||p.occasion===activeOccasion);
+ grid.innerHTML=shown.map((p,i)=>`<article class="product"><button class="heart" onclick="showToast('Added to wishlist ♡')">♡</button><div class="pimg">${p.icon}</div><div class="pbody"><div class="tag">${p.cat} • ${p.occasion}</div><div class="pname">${p.name}</div><div class="price">₹${p.price.toLocaleString('en-IN')} <span class="old">₹${p.old.toLocaleString('en-IN')}</span></div><button class="add" onclick="showToast('${p.name} added to cart')">ADD TO CART</button></div></article>`).join('') || '<p>No gifts found in this occasion yet.</p>';
+}
+function filterProducts(cat){
+ activeOccasion="All";renderProducts();document.querySelector('#products').scrollIntoView({behavior:'smooth'});showToast('Showing curated '+cat+' gifts');
+}
+function setOccasion(btn,val){
+ document.querySelectorAll('.pill').forEach(x=>x.classList.remove('active'));btn.classList.add('active');activeOccasion=val;renderProducts();document.querySelector('#products').scrollIntoView({behavior:'smooth'});
+}
+document.querySelectorAll('.choice').forEach(btn=>btn.addEventListener('click',()=>{btn.parentElement.querySelectorAll('.choice').forEach(x=>x.classList.remove('selected'));btn.classList.add('selected')}));
+function runFinder(){
+ const person=document.querySelector('[data-group="person"] .selected').textContent;
+ const occasion=document.querySelector('[data-group="occasion"] .selected').textContent;
+ const budget=document.querySelector('[data-group="budget"] .selected').textContent;
+ document.getElementById('modalTitle').textContent=`Gifts for ${person}`;
+ document.getElementById('modalText').textContent=`Based on ${occasion.toLowerCase()} and your ${budget} budget, we recommend starting with our curated collection for ${person.toLowerCase()}.`;
+ document.getElementById('modal').classList.add('show');
+}
+function closeModal(){document.getElementById('modal').classList.remove('show')}
+function showToast(t){const el=document.getElementById('toast');el.textContent=t;el.classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>el.classList.remove('show'),2400)}
+function subscribe(){const e=document.getElementById('email').value;if(!e){showToast('Please enter your email');return}showToast('Welcome to the RADHIVAM circle ✨');document.getElementById('email').value=''}
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(e=>observer.observe(e));
+renderProducts();
+</script>

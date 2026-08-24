@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ page_title | escape }}{% unless page_title contains shop.name %} — {{ shop.name | escape }}{% endunless %}</title>
+  <meta name="description" content="RADHIVAM — The Art of Gifting. Thoughtful gifts for women, men, kids and every beautiful occasion.">
+  {{ content_for_header }}
+  {{ 'radhivam.css' | asset_url | stylesheet_tag }}
+</head>
+<body>
+  {{ content_for_layout }}
+  {{ 'radhivam.js' | asset_url | script_tag }}
+</body>
+</html>
